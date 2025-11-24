@@ -2,6 +2,42 @@
 
 Este monorepo contiene 3 aplicaciones que deben desplegarse en proyectos separados de Vercel.
 
+## CONFIGURACIÓN RÁPIDA (Recomendada)
+
+Para cada proyecto en Vercel, configura lo siguiente:
+
+### doblandoelviento-web
+1. Settings → Environment Variables → Add Variable
+   - Name: `VERCEL_APP_NAME`
+   - Value: `web-doblado`
+   - Environment: Production, Preview, Development
+2. Settings → Build & Development Settings
+   - Build Command (Override): `./build.sh`
+   - Output Directory: `.next`
+3. Deployments → Latest → Redeploy
+
+### taviti-web
+1. Settings → Environment Variables → Add Variable
+   - Name: `VERCEL_APP_NAME`
+   - Value: `web-taviti`
+   - Environment: Production, Preview, Development
+2. Settings → Build & Development Settings
+   - Build Command (Override): `./build.sh`
+   - Output Directory: `.next`
+3. Deployments → Latest → Redeploy
+
+### ilaia-web
+1. Settings → Environment Variables → Add Variable
+   - Name: `VERCEL_APP_NAME`
+   - Value: `web-ilaia`
+   - Environment: Production, Preview, Development
+2. Settings → Build & Development Settings
+   - Build Command (Override): `./build.sh`
+   - Output Directory: `.next`
+3. Deployments → Latest → Redeploy
+
+---
+
 ## Configuración desde Vercel Dashboard
 
 ### 1. Doblando el Viento (Proyecto Principal)
