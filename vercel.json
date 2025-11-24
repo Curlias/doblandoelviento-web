@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npx turbo run build --filter=web-doblado...",
+  "devCommand": "npx turbo run dev --filter=web-doblado...",
+  "installCommand": "npm install",
+  "framework": null,
+  "outputDirectory": "apps/web-doblado/.next"
+}
