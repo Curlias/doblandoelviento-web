@@ -1,8 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "npx turbo run build --filter=web-ilaia...",
-  "devCommand": "npx turbo run dev --filter=web-ilaia...",
+  "buildCommand": "npx turbo run build --filter=web-taviti...",
+  "devCommand": "npx turbo run dev --filter=web-taviti...",
   "installCommand": "npm install",
   "framework": null,
-  "outputDirectory": "apps/web-ilaia/.next"
+  "outputDirectory": "apps/web-taviti/.next"
 }
