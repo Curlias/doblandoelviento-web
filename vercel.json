@@ -1,6 +1,15 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "bash build-doblado.sh",
+  "buildCommand": "npm install && npx turbo run build",
   "installCommand": "echo 'Skip'",
-  "outputDirectory": ".next"
+  "rewrites": [
+    {
+      "source": "/taviti/:path*",
+      "destination": "https://taviti-web.vercel.app/:path*"
+    },
+    {
+      "source": "/ilaia/:path*",
+      "destination": "https://ilaia-web.vercel.app/:path*"
+    }
+  ]
 }
