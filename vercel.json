@@ -1,10 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "bash build.sh",
-  "installCommand": "npm install",
+  "buildCommand": "npm install && npx turbo run build --filter=web-doblado... && rm -rf .next && cp -r apps/web-doblado/.next .next && cp apps/web-doblado/next.config.js next.config.js && cp apps/web-doblado/package.json package.json",
+  "installCommand": "echo 'Skipping default install'",
   "framework": null,
-  "outputDirectory": ".next",
-  "env": {
-    "VERCEL_APP_NAME": "web-doblado"
-  }
+  "outputDirectory": ".next"
 }
