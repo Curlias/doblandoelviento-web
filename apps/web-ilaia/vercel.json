@@ -1,7 +1,0 @@
-{
-  "buildCommand": "cd ../.. && npx turbo run build --filter=web-ilaia...",
-  "devCommand": "cd ../.. && npx turbo run dev --filter=web-ilaia...",
-  "installCommand": "npm install",
-  "framework": "nextjs",
-  "outputDirectory": ".next"
-}
