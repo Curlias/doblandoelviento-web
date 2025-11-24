@@ -10,17 +10,16 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          50: "#fef8f0",
-          100: "#fdefd9",
-          200: "#fbddb2",
-          300: "#f8c581",
-          400: "#f4a64e",
-          500: "#f08b2a",
-          600: "#e1721f",
-          700: "#bb571b",
-          800: "#95451d",
-          900: "#783b1b",
+          cream: "#f5ebe0",
+          beige: "#e3d5ca",
+          dark: "#3d3d3d",
+          charcoal: "#2b2b2b",
+          accent: "#d5bdaf",
         },
+      },
+      fontFamily: {
+        serif: ['Playfair Display', 'serif'],
+        sans: ['Montserrat', 'sans-serif'],
       },
     },
   },

@@ -1,0 +1,127 @@
+You are GitHub Copilot. I need you to bootstrap a **complete monorepo** project for a triple-brand business: **Doblando el Viento**, **TAVITI** y **ILAIA**, built with Next.js, Turborepo, TailwindCSS, and a shared design system. The architecture must support current subdomain routing, but also be ready to separate into independent domains in the future. Also include legal pages (Privacy Policy, Cookies Policy, Terms of Service) and a footer credit: "Potenciado con la tecnología de Veldrion" linking to veldrion.com.
+
+### CONTEXT / BUSINESS BACKGROUND
+
+**Doblando el Viento**  
+- Es un negocio de curaduría para eventos: ofrece velas artesanales (de cera de soya), detalles para eventos, barras dulces y montajes para celebraciones.  
+- Tiene una presencia en Querétaro.  
+- Su página web (frontend) debe mostrar: servicios (curaduría, decoración, barra dulce), galería de eventos, un formulario para cotizaciones, testimonios, contacto, y presencia de WhatsApp para pedir presupuestos.  
+
+**TAVITI**  
+- Marca de papelería boutique.  
+- Catálogo de productos: papeles de lujo, stickers, journaling, scrapbooking.  
+- Tienda: debe permitir ver productos y hacer pedidos (o al menos ver catálogo para ahora).  
+- Blog de inspiración creativa, ideas DIY, lanzamientos nuevos.  
+
+**ILAIA**  
+- Marca educativa STEAM para niños.  
+- Ofrece cursos y material didáctico: kits de ciencia, robótica, hojas STEM, tarjetas educativas.  
+- Página con descripción de cursos, página para comprar o inscribirse, blog educativo, calendario de talleres, sección de recursos descargables.
+
+### GOALS & ARCHITECTURE
+
+1. Monorepo con Turborepo:  
+/apps
+/web-doblado
+/web-taviti
+/web-ilaia
+/packages
+/ui
+/config
+
+markdown
+Copiar código
+2. Cada “app” (sitio) debe ser un Next.js (App Router) con layout propio y branding independiente.  
+3. Debe haber componentes compartidos: botones, encabezados, footers, formularios, etc. en `packages/ui`.  
+4. Routing por subdominio configurado con middleware para:  
+- `doblandoelviento.com` → /web-doblado  
+- `taviti.doblandoelviento.com` → /web-taviti  
+- `ilaia.doblandoelviento.com` → /web-ilaia  
+5. Preparar para migrar cada app a dominio propio más adelante (por ejemplo `taviti.com`, `ilaia.com`) sin reescribir gran parte del proyecto.
+
+### PAGES / CONTENT TO GENERATE
+
+Para cada app genera al menos lo siguiente:
+
+**Doblando el Viento**  
+- Home: hero con título “Doblando el Viento – Diseño & Curaduría para eventos en Querétaro”, subtexto y CTA para “Solicitar cotización” + WhatsApp.  
+- Servicios: secciones para Curaduría completa, Barra dulce, Detalles / recuerdos (ej. velas, cajitas) con descripciones y precios de ejemplo.  
+- Galería: grid de imágenes con lightbox.  
+- Testimonios: sección con al menos 2–3 testimonios falsos o de ejemplo (de Facebook).  
+- Cotización: formulario con campos Nombre, Email, Teléfono, Fecha evento, Tipo de evento, Presupuesto.  
+- Contacto: dirección, mapa (o placeholder), WhatsApp, correo.  
+- Footer: con enlaces a las otras dos divisiones, legal (políticas), y al pie **“Potenciado con la tecnología de Veldrion”** con link a `https://veldrion.com`.
+
+**TAVITI**  
+- Home: “Papelería Boutique TAVITI”, breve descripción, CTA “Ver catálogo”.  
+- Catálogo / Tienda: listado ficticio de productos (ej. “Cuaderno de lujo”, “Sticker pack”, etc.) con precios de ejemplo.  
+- Blog: página de blog con 1–2 posts de ejemplo (“Ideas para journaling”, “Cómo decorar tu scrapbook”).  
+- Contacto: formulario, email, WhatsApp (si aplica).  
+- Footer: con enlaces a las demás marcas y al pie “Potenciado con la tecnología de Veldrion”.
+
+**ILAIA**  
+- Home: “ILAIA – Cursos y Material STEAM para niños”, descripción, CTA “Ver cursos”.  
+- Cursos: lista de cursos de ejemplo con nombre, descripción, precio.  
+- Recursos: página con materiales descargables o kits (ej. “Kit robótica básica”, “Tarjetas de ciencia”).  
+- Blog educativo: 1–2 artículos de ejemplo (“Por qué es importante STEAM”, “Actividades para niños científicos”).  
+- Calendario: sección con próximos talleres (puede ser estática por ahora).  
+- Inscripción / Compra: formulario para que padres inscriban o compren materiales.  
+- Contacto: formulario, email, WhatsApp si aplica.  
+- Footer: enlaces a otras marcas + “Potenciado con la tecnología de Veldrion”.
+
+### LEGAL / POLICIES
+
+Genera páginas (Next.js) para:  
+1. **Privacy Policy** (Política de Privacidad) — incluye tratamiento de datos personales, cómo se usan los formularios, qué datos se recopilan.  
+2. **Cookies Policy** — define qué cookies se usan, por qué, y cómo el usuario puede aceptarlas / rechazar.  
+3. **Terms of Service** (Términos de Servicio) — condiciones de uso del sitio.
+
+Estas políticas deben aparecer en el footer de cada app.
+
+### STYLING
+
+- Usa **Tailwind CSS** para todos los estilos.  
+- Usa **shadcn/ui** si es posible para componentes base (o al menos botones, inputs, cards).  
+- Colores base: usa una paleta neutra + acentos suaves (puedes generar ejemplos).
+
+### CONFIGURATION & DEPLOYMENT
+
+- `turborepo.json` con tareas `build`, `dev`, `lint`, `type-check` para cada workspace.  
+- `package.json` para root y para cada app (web-doblado, web-taviti, web-ilaia).  
+- `tsconfig.json` base y tsconfig para cada app.  
+- Tailwind config raíz + posibilidad de extender por app.  
+- Middleware en Next.js para redirigir subdominios.  
+- Documentación en README.md con instrucciones:  
+- cómo correr local (`npm dev`)  
+- cómo desplegar a Vercel  
+- cómo asignar dominios / subdominios en Vercel  
+- cómo migrar una app a dominio independiente en Vercel  
+- cómo añadir nuevas políticas legales  
+
+### DELIVERABLES (exactos)
+
+Copilot should generate:
+
+1. Folder structure  
+2. `turborepo.json`  
+3. Root `package.json` and workspace `package.json`  
+4. `tsconfig.json` (base + per app)  
+5. Tailwind config files  
+6. Shared UI package in `/packages/ui` with at least a `Button` and `Card` component  
+7. Layout components for each app (Header, Footer)  
+8. Pages (`Home`, `Servicios / Cursos`, `Galería / Recursos`, `Blog`, `Contacto`, `Legal pages`)  
+9. Middleware (`middleware.ts`) for subdomain routing  
+10. README.md with deployment & migration instructions  
+11. Footer in each site containing:  
+ - Links a las otras marcas  
+ - Legal (Privacy, Cookies, Terms)  
+ - Texto “Potenciado con la tecnología de Veldrion” con enlace a `https://veldrion.com`
+
+### ADDITIONAL NOTES
+
+- Use TypeScript everywhere.  
+- Use ESLint config shared in `/packages/config` if possible.  
+- Make it modular, clean, y fácilmente escalable.  
+- Don’t generate actual secret values; just placeholders (e.g. `NEXT_PUBLIC_WHATSAPP_NUMBER`, `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`).
+
+---

@@ -1,10 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Playfair_Display, Montserrat } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@repo/ui/footer";
 import { Header } from "@repo/ui/header";
 
-const inter = Inter({ subsets: ["latin"] });
+const playfair = Playfair_Display({ 
+  subsets: ["latin"],
+  variable: '--font-playfair',
+  display: 'swap',
+});
+
+const montserrat = Montserrat({ 
+  subsets: ["latin"],
+  variable: '--font-montserrat',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: "Doblando el Viento - Diseño & Curaduría para Eventos en Querétaro",
@@ -32,7 +42,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={inter.className}>
+      <body className={`${playfair.variable} ${montserrat.variable} font-sans`}>
         <Header 
           brand="doblado" 
           brandName="Doblando el Viento" 
