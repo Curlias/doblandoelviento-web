@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "./build.sh",
+  "installCommand": "npm install",
+  "framework": null,
+  "outputDirectory": ".next",
+  "env": {
+    "VERCEL_APP_NAME": "web-doblado"
+  }
+}
