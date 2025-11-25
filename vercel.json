@@ -1,15 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "npm install && npx turbo run build",
-  "installCommand": "echo 'Skip'",
-  "rewrites": [
-    {
-      "source": "/taviti/:path*",
-      "destination": "https://taviti-web.vercel.app/:path*"
-    },
-    {
-      "source": "/ilaia/:path*",
-      "destination": "https://ilaia-web.vercel.app/:path*"
-    }
-  ]
+  "buildCommand": "cd apps/web-main && npm install && npm run build",
+  "outputDirectory": "apps/web-main/.next",
+  "framework": "nextjs",
+  "installCommand": "npm install"
 }
