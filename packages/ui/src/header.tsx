@@ -92,9 +92,11 @@ export const Header: React.FC<HeaderProps> = ({ brand, brandName, navigation }) 
           <div className="flex h-24 items-center justify-between">
             <a href={styles.homeHref} className="flex items-center gap-2">
               <img src={styles.logo} alt={styles.logoAlt} className={`${styles.logoHeight} w-auto`} />
-              <div className="flex flex-col">
-                <span className="text-xs font-light italic text-gray-500">{styles.tagline}</span>
-              </div>
+              {'tagline' in styles && (
+                <div className="flex flex-col">
+                  <span className="text-xs font-light italic text-gray-500">{styles.tagline}</span>
+                </div>
+              )}
             </a>
             <div className="hidden lg:flex items-center space-x-1">
               {navigation.map((item, idx) => (
