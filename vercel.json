@@ -1,6 +1,4 @@
 {
-  "buildCommand": "cd apps/web-main && npm run build",
-  "outputDirectory": "apps/web-main/.next",
-  "installCommand": "npm install",
-  "framework": "nextjs"
+  "buildCommand": "npm install && turbo run build --filter=web-main",
+  "outputDirectory": "apps/web-main/.next"
 }
