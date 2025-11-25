@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" fill="none">
+  <defs>
+    <style>
+      .taviti-main { 
+        fill: #000000;
+        font-family: serif;
+        font-size: 100px;
+        font-weight: 300;
+        letter-spacing: 0.15em;
+      }
+      .taviti-sub { 
+        fill: #000000;
+        font-family: 'Brush Script MT', cursive;
+        font-size: 45px;
+        font-style: italic;
+      }
+    </style>
+  </defs>
+  
+  <!-- Main TAVITI text -->
+  <text class="taviti-main" x="50" y="140">TAVITI</text>
+  
+  <!-- Stationery subtitle -->
+  <text class="taviti-sub" x="180" y="200">stationery</text>
+  
+  <!-- Decorative dot -->
+  <circle cx="500" cy="80" r="15" fill="#000000"/>
+</svg>

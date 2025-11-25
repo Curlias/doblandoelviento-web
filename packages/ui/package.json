@@ -6,7 +6,8 @@
     "./button": "./src/button.tsx",
     "./card": "./src/card.tsx",
     "./header": "./src/header.tsx",
-    "./footer": "./src/footer.tsx"
+    "./footer": "./src/footer.tsx",
+    "./brand-switcher": "./src/brand-switcher.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
