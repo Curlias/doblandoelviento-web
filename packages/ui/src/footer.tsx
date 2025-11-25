@@ -20,6 +20,8 @@ export const Footer: React.FC<FooterProps> = ({ brandName, otherBrands = [], bra
       logoClass: "brightness-0 invert",
       basePath: "",
       description: "Creamos experiencias únicas y memorables para tus eventos más especiales. Cada detalle cuenta, cada momento importa.",
+      socialBg: "bg-sage-700/50",
+      socialHover: "hover:bg-sage-600",
     },
     taviti: {
       bg: "bg-gradient-to-br from-pink-900 via-pink-800 to-amber-900",
