@@ -86,7 +86,7 @@ export function BrandLayoutWrapper({ children }: { children: React.ReactNode }) 
         currentBrand={currentBrand}
       />
       <Header 
-        brand={config.brand} 
+        brand="doblado"
         brandName={config.brandName} 
         navigation={config.navigation}
       />
