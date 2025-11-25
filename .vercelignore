@@ -1,0 +1,8 @@
+# Build artifacts
+.next/
+.turbo/
+node_modules/.cache/
+
+# OS files
+.DS_Store
+*.log
