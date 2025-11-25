@@ -8,6 +8,7 @@ export interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ brand, brandName, navigation }) => {
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const brandStyles = {
     doblado: {
       bg: "bg-primary-cream",
@@ -110,13 +111,36 @@ export const Header: React.FC<HeaderProps> = ({ brand, brandName, navigation }) 
               ))}
             </div>
             <div className="lg:hidden">
-              <button className={`p-3 rounded-full hover:bg-pink-100 transition-colors ${styles.text}`}>
+              <button 
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className={`p-3 rounded-full hover:bg-pink-100 transition-colors ${styles.text}`}
+              >
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 6h16M4 12h16M4 18h16" />
+                  {mobileMenuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 6h16M4 12h16M4 18h16" />
+                  )}
                 </svg>
               </button>
             </div>
           </div>
+          {/* Mobile menu TAVITI */}
+          {mobileMenuOpen && (
+            <div className="lg:hidden bg-white/95 backdrop-blur-sm border-t border-pink-200">
+              <div className="px-4 pt-4 pb-6 space-y-2">
+                {navigation.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className={`block px-4 py-3 rounded-full text-sm font-medium ${styles.text} ${styles.hover} hover:bg-pink-50 transition-all`}
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
         </nav>
       </header>
     );
@@ -148,13 +172,36 @@ export const Header: React.FC<HeaderProps> = ({ brand, brandName, navigation }) 
               ))}
             </div>
             <div className="md:hidden">
-              <button className={`p-3 rounded-2xl bg-purple-500 text-white hover:bg-purple-600 transition-colors shadow-lg`}>
+              <button 
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className={`p-3 rounded-2xl bg-purple-500 text-white hover:bg-purple-600 transition-colors shadow-lg`}
+              >
                 <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M4 6h16M4 12h16M4 18h16" />
+                  {mobileMenuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M4 6h16M4 12h16M4 18h16" />
+                  )}
                 </svg>
               </button>
             </div>
           </div>
+          {/* Mobile menu ILAIA */}
+          {mobileMenuOpen && (
+            <div className="md:hidden bg-gradient-to-b from-purple-50 to-pink-50 border-t-4 border-purple-300">
+              <div className="px-4 pt-6 pb-8 space-y-3">
+                {navigation.map((item, idx) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className={`block px-5 py-3.5 rounded-2xl text-base font-bold ${styles.text} bg-white hover:bg-purple-100 hover:text-purple-600 transition-all shadow-md hover:shadow-xl transform hover:scale-105`}
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
         </nav>
       </header>
     );
