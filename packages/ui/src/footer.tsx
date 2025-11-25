@@ -3,7 +3,7 @@ import * as React from "react";
 export interface FooterProps {
   brandName: string;
   otherBrands?: Array<{ name: string; url: string }>;
-  brand?: "doblado" | "taviti" | "ilaia";
+  brand?: "doblado";
 }
 
 export const Footer: React.FC<FooterProps> = ({ brandName, otherBrands = [], brand = "doblado" }) => {
@@ -253,18 +253,7 @@ export const Footer: React.FC<FooterProps> = ({ brandName, otherBrands = [], bra
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              {brand === "doblado" && (
-                <img src="/logo.svg" alt="Doblando el Viento" className="h-10 w-auto brightness-0 invert" />
-              )}
-              {brand === "taviti" && (
-                <img src="/taviti-logo.svg" alt="TAVITI" className="h-10 w-auto" />
-              )}
-              {brand === "ilaia" && (
-                <h3 className={`font-serif text-2xl font-medium ${styles.text}`}>{brandName}</h3>
-              )}
-              {brand !== "ilaia" && brand !== "taviti" && brand !== "doblado" && (
-                <h3 className={`font-serif text-2xl font-medium ${styles.text}`}>{brandName}</h3>
-              )}
+              <img src="/logo.svg" alt="Doblando el Viento" className="h-10 w-auto brightness-0 invert" />
             </div>
             <p className={`${styles.muted} text-sm leading-relaxed max-w-md italic`}>
               Creamos experiencias únicas y memorables para tus eventos más especiales. 
