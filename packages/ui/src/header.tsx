@@ -1,27 +1,51 @@
 import * as React from "react";
 
 export interface HeaderProps {
-  brand: "doblado";
+  brand: "doblado" | "taviti" | "ilaia";
   brandName: string;
   navigation: Array<{ name: string; href: string }>;
 }
 
 export const Header: React.FC<HeaderProps> = ({ brand, brandName, navigation }) => {
-  const styles = {
-    bg: "bg-primary-cream",
-    border: "border-primary-sand",
-    text: "text-primary-charcoal",
-    hover: "hover:text-sage-600",
-    logo: "font-serif tracking-wide",
+  const brandStyles = {
+    doblado: {
+      bg: "bg-primary-cream",
+      border: "border-primary-sand",
+      text: "text-primary-charcoal",
+      hover: "hover:text-sage-600",
+      logo: "/logo.svg",
+      logoAlt: "Doblando el Viento",
+      homeHref: "/",
+    },
+    taviti: {
+      bg: "bg-white",
+      border: "border-gray-200",
+      text: "text-gray-800",
+      hover: "hover:text-amber-700",
+      logo: "/taviti-logo.svg",
+      logoAlt: "TAVITI",
+      homeHref: "/taviti",
+    },
+    ilaia: {
+      bg: "bg-white",
+      border: "border-purple-200",
+      text: "text-gray-800",
+      hover: "hover:text-purple-600",
+      logo: "/ilaia-logo.png",
+      logoAlt: "ILAIA",
+      homeHref: "/ilaia",
+    },
   };
+
+  const styles = brandStyles[brand];
 
   return (
     <header className={`${styles.bg} border-b ${styles.border}`}>
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           <div className="flex items-center">
-            <a href="/" className="flex items-center gap-3">
-              <img src="/logo.svg" alt="Doblando el Viento" className="h-12 w-auto" />
+            <a href={styles.homeHref} className="flex items-center gap-3">
+              <img src={styles.logo} alt={styles.logoAlt} className="h-12 w-auto" />
             </a>
           </div>
           <div className="hidden md:block">

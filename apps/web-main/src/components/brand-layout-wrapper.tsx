@@ -86,7 +86,7 @@ export function BrandLayoutWrapper({ children }: { children: React.ReactNode }) 
         currentBrand={currentBrand}
       />
       <Header 
-        brand="doblado"
+        brand={currentBrand}
         brandName={config.brandName} 
         navigation={config.navigation}
       />
@@ -96,7 +96,7 @@ export function BrandLayoutWrapper({ children }: { children: React.ReactNode }) 
       <Footer 
         brandName={config.brandName}
         otherBrands={config.otherBrands}
-        brand={currentBrand === "doblado" ? "doblado" : undefined}
+        brand={currentBrand}
       />
     </>
   );
