@@ -18,6 +18,10 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Doblando el Viento - Diseño & Curaduría para Eventos en Querétaro",
   description: "Velas artesanales, detalles para eventos, barras dulces y montajes para celebraciones en Querétaro",
+  icons: {
+    icon: '/logo.svg',
+    apple: '/logo.svg',
+  },
 };
 
 export default function RootLayout({
