@@ -15,6 +15,11 @@ const tavitiNavigation = [
   { name: "Contacto", href: "/taviti/contacto" },
 ];
 
+const otherBrands = [
+  { name: "Doblando el Viento", url: "/" },
+  { name: "ILAIA - Educación STEAM", url: "/ilaia" },
+];
+
 export default function TavitiLayout({
   children,
 }: {
@@ -24,7 +29,7 @@ export default function TavitiLayout({
     <>
       <Header brand="taviti" brandName="TAVITI" navigation={tavitiNavigation} />
       {children}
-      <Footer brandName="TAVITI" />
+      <Footer brandName="TAVITI" otherBrands={otherBrands} brand="taviti" />
     </>
   );
 }

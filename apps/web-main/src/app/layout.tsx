@@ -54,6 +54,7 @@ export default function RootLayout({
         <Footer 
           brandName="Doblando el Viento"
           otherBrands={otherBrands}
+          brand="doblado"
         />
       </body>
     </html>

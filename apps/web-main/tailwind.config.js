@@ -9,13 +9,26 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Doblando el Viento
+        // Doblando el Viento - Paleta del Logo
         primary: {
-          cream: "#f5ebe0",
-          beige: "#e3d5ca",
+          cream: "#FAF8F5",
+          beige: "#F5F0E8",
+          sand: "#E8E0D5",
+          taupe: "#C4B7A6",
           dark: "#3d3d3d",
           charcoal: "#2b2b2b",
-          accent: "#d5bdaf",
+        },
+        sage: {
+          50: "#f6f7f4",
+          100: "#e8ebe3",
+          200: "#d4dac9",
+          300: "#b5c0a5",
+          400: "#96a67e",
+          500: "#7a8b62",
+          600: "#5f6e4c",
+          700: "#4a5640",
+          800: "#3d4736",
+          900: "#353d30",
         },
         // TAVITI
         taviti: {

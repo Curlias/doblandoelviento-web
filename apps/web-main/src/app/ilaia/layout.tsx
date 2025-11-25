@@ -18,6 +18,11 @@ const ilaiaNavigation = [
   { name: "Contacto", href: "/ilaia/contacto" },
 ];
 
+const otherBrands = [
+  { name: "Doblando el Viento", url: "/" },
+  { name: "TAVITI - Papelería Boutique", url: "/taviti" },
+];
+
 export default function IlaiaLayout({
   children,
 }: {
@@ -27,7 +32,7 @@ export default function IlaiaLayout({
     <>
       <Header brand="ilaia" brandName="ILAIA" navigation={ilaiaNavigation} />
       {children}
-      <Footer brandName="ILAIA" />
+      <Footer brandName="ILAIA" otherBrands={otherBrands} brand="ilaia" />
     </>
   );
 }
