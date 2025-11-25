@@ -1,22 +1,50 @@
 import * as React from "react";
+import type { Brand } from "./types";
 
 export interface FooterProps {
   brandName: string;
   otherBrands?: Array<{ name: string; url: string }>;
-  brand?: "doblado";
+  brand: Brand;
 }
 
-export const Footer: React.FC<FooterProps> = ({ brandName, otherBrands = [], brand = "doblado" }) => {
-  const styles = {
-    bg: "bg-primary-charcoal",
-    text: "text-primary-cream",
-    muted: "text-primary-sand",
-    accent: "text-sage-400",
-    hover: "hover:text-sage-300",
-    border: "border-primary-dark",
+export const Footer: React.FC<FooterProps> = ({ brandName, otherBrands = [], brand }) => {
+  const brandStyles = {
+    doblado: {
+      bg: "bg-primary-charcoal",
+      text: "text-primary-cream",
+      muted: "text-primary-sand",
+      accent: "text-sage-400",
+      hover: "hover:text-sage-300",
+      border: "border-primary-dark",
+      logo: "/logo.svg",
+      logoClass: "brightness-0 invert",
+      basePath: "",
+    },
+    taviti: {
+      bg: "bg-gray-900",
+      text: "text-white",
+      muted: "text-gray-300",
+      accent: "text-amber-400",
+      hover: "hover:text-amber-300",
+      border: "border-gray-700",
+      logo: "/taviti-logo.svg",
+      logoClass: "brightness-0 invert",
+      basePath: "/taviti",
+    },
+    ilaia: {
+      bg: "bg-gradient-to-r from-purple-900 to-pink-900",
+      text: "text-white",
+      muted: "text-purple-200",
+      accent: "text-yellow-400",
+      hover: "hover:text-yellow-300",
+      border: "border-purple-700",
+      logo: "/ilaia-logo.png",
+      logoClass: "",
+      basePath: "/ilaia",
+    },
   };
 
-  const basePath = "";
+  const styles = brandStyles[brand];
 
   return (
     <footer className={styles.bg}>
@@ -24,11 +52,12 @@ export const Footer: React.FC<FooterProps> = ({ brandName, otherBrands = [], bra
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <img src="/logo.svg" alt="Doblando el Viento" className="h-10 w-auto brightness-0 invert" />
+              <img src={styles.logo} alt={brandName} className={`h-10 w-auto ${styles.logoClass}`} />
             </div>
             <p className={`${styles.muted} text-sm leading-relaxed max-w-md italic`}>
-              Creamos experiencias únicas y memorables para tus eventos más especiales. 
-              Cada detalle cuenta, cada momento importa.
+              {brand === "doblado" && "Creamos experiencias únicas y memorables para tus eventos más especiales. Cada detalle cuenta, cada momento importa."}
+              {brand === "taviti" && "Papelería boutique personalizada que cuenta tu historia. Diseño único para cada momento especial."}
+              {brand === "ilaia" && "Educación STEAM para niños y jóvenes. Transformamos la curiosidad en conocimiento a través de la innovación."}
             </p>
             <div className="mt-6 flex space-x-4">
               <a href="#" className={`${styles.muted} ${styles.hover} transition-colors`}>
@@ -69,17 +98,17 @@ export const Footer: React.FC<FooterProps> = ({ brandName, otherBrands = [], bra
             <h3 className={`text-sm font-semibold uppercase tracking-wider mb-4 ${styles.text}`}>Legal</h3>
             <ul className="space-y-3">
               <li>
-                <a href={`${basePath}/privacy`} className={`${styles.muted} ${styles.hover} text-sm transition-colors`}>
+                <a href={`${styles.basePath}/privacy`} className={`${styles.muted} ${styles.hover} text-sm transition-colors`}>
                   Política de Privacidad
                 </a>
               </li>
               <li>
-                <a href={`${basePath}/cookies`} className={`${styles.muted} ${styles.hover} text-sm transition-colors`}>
+                <a href={`${styles.basePath}/cookies`} className={`${styles.muted} ${styles.hover} text-sm transition-colors`}>
                   Política de Cookies
                 </a>
               </li>
               <li>
-                <a href={`${basePath}/terms`} className={`${styles.muted} ${styles.hover} text-sm transition-colors`}>
+                <a href={`${styles.basePath}/terms`} className={`${styles.muted} ${styles.hover} text-sm transition-colors`}>
                   Términos de Servicio
                 </a>
               </li>

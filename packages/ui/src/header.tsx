@@ -1,7 +1,8 @@
 import * as React from "react";
+import type { Brand } from "./types";
 
 export interface HeaderProps {
-  brand: "doblado" | "taviti" | "ilaia";
+  brand: Brand;
   brandName: string;
   navigation: Array<{ name: string; href: string }>;
 }
