@@ -1,4 +1,9 @@
 {
-  "buildCommand": "npm install && turbo run build --filter=web-main",
-  "outputDirectory": "apps/web-main/.next"
+  "version": 2,
+  "builds": [
+    {
+      "src": "apps/web-main/package.json",
+      "use": "@vercel/next"
+    }
+  ]
 }
