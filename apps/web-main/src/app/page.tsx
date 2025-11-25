@@ -2,20 +2,13 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-primary-cream">
       {/* Hero Section - Elegante y minimalista */}
-      <section className="relative min-h-[90vh] flex items-center justify-center bg-primary-cream overflow-hidden">
-        {/* Video Background */}
+      <section className="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-primary-cream via-primary-beige to-primary-sand overflow-hidden">
+        {/* Subtle background pattern instead of video */}
         <div className="absolute inset-0 z-0">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            className="w-full h-full object-cover opacity-40"
-          >
-            <source src="https://storage.coverr.co/videos/7pQXV00lPPsI8H2H017baTnLl02i8ZZHawy?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjM5NDk5OTk5fQ.kTy0ysHZMGhXMEXjdxwTHsrJk_K6YWrqDYPBx3Z0YXU" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-primary-cream/40 via-primary-cream/50 to-primary-cream/60"></div>
+          <div className="absolute inset-0 opacity-20" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a8998c' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary-cream/30 to-primary-cream/60"></div>
         </div>
         
         {/* Decorative botanical elements */}
